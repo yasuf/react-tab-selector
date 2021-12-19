@@ -1,0 +1,23 @@
+.tab-selector {
+  text-align: left;
+}
+
+.tab-selector button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: rgb(238, 238, 238);
+  margin: 0 5px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid rgb(191, 191, 191);
+  color: black;
+  list-style: none;
+  display: inline;
+}
+
+.tab-selector .selected {
+  background-color: black;
+  color: white;
+}
