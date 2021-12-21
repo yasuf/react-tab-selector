@@ -63,7 +63,7 @@ function TabSelector(props) {
   }, /*#__PURE__*/_react.default.createElement("ul", null, tabs.map((tab, index) => {
     return /*#__PURE__*/_react.default.createElement("button", {
       onClick: () => onTabClicked(index),
-      style: getButtonStyles()
+      style: getButtonStyles(index)
     }, /*#__PURE__*/_react.default.createElement("li", {
       className: "tab"
     }, "Element ", index));
