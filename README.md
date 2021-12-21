@@ -35,3 +35,6 @@ const MyComponent = () => {
 }
 ```
 
+Here's what this example would look like:
+
+![TabSelector example](assets/tab-selector.png)
