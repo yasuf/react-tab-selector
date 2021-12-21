@@ -1,9 +1,10 @@
-## TODO: Create Readme
+## React Tab Selector
 
 ## Steps to publish a new version to the NPM registry
 
-1. Run `npm run build`
-2. Run `npm publish`
+1. Run `npm run build`.
+2. Verify files have changed with `git status`.
+3. Run `npm publish`.
 
 ## Getting started
 

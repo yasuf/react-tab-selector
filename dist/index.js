@@ -10,8 +10,6 @@ Object.defineProperty(exports, "TabSelector", {
   }
 });
 
-var _react = _interopRequireDefault(require("react"));
-
 var _TabSelector = _interopRequireDefault(require("./components/TabSelector"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
