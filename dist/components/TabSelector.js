@@ -59,14 +59,14 @@ function TabSelector(props) {
   };
 
   return /*#__PURE__*/_react.default.createElement("div", {
-    "style-z": rootStyles
+    style: rootStyles
   }, /*#__PURE__*/_react.default.createElement("ul", null, tabs.map((tab, index) => {
     return /*#__PURE__*/_react.default.createElement("button", {
       onClick: () => onTabClicked(index),
       style: getButtonStyles(index)
     }, /*#__PURE__*/_react.default.createElement("li", {
       className: "tab"
-    }, "Element ", index));
+    }, tab.title || ''));
   })));
 }
 
