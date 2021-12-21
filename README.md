@@ -10,7 +10,7 @@
 
 1. Inside your project, run `npm install --save react-tab-selector`.
 
-2. Use the component with
+2. Use the component:
 
 ```jsx
 import { TabSelector } from 'react-tab-selector';
