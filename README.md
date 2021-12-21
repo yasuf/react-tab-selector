@@ -1,4 +1,4 @@
-## React Tab Selector
+# React Tab Selector
 
 ## Steps to publish a new version to the NPM registry
 
