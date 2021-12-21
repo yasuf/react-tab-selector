@@ -12,14 +12,24 @@
 
 2. Use the component with
 
-```
+```jsx
 import { TabSelector } from 'react-tab-selector';
 
 
 const MyComponent = () => {
   return <div>
     <TabSelector
-      tabs={[]}
+      tabs={[
+        {
+          title: 'All'
+        },
+        {
+          title: 'Gaming'
+        },
+        {
+          title: 'Photography'
+        }
+      ]}
     />
   </div>
 }
