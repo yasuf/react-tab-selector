@@ -38,6 +38,11 @@ const MyComponent = () => {
 }
 ```
 
+## Component props
+| Prop   | Description                                                                                                                   |
+|--------|-------------------------------------------------------------------------------------------------------------------------------|
+| `tabs` | Takes an array of objects with the value pairs `title` and `onClick`.<br/> For example: `[{ title: 'All', onClick: myCallback }]`  |
+
 Here's what this example would look like:
 
 ![TabSelector example](assets/tab-selector.png)
