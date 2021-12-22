@@ -43,7 +43,7 @@ Here's what this example would look like:
 
 ![TabSelector example](assets/tab-selector.png)
 
-## Steps to publish a new version to the NPM registry
+### Steps to publish a new version to the NPM registry
 
 1. Run `npm run build`.
 2. Verify files have changed with `git status`.
