@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
 
-const rootStyles = {
+const rootStylesDefault = {
   textAlign: 'left'
 }
 
-const buttonStyles = {
+const buttonStylesDefault = {
   "background": "none",
   "cursor": "pointer",
   "textDecoration": "none",
@@ -19,7 +19,7 @@ const buttonStyles = {
   "display": "inline"
 }
 
-const selectedStyles = {
+const selectedStylesDefault = {
   "backgroundColor": "black",
   "color": "white"
 }
@@ -29,7 +29,8 @@ const selectedStyles = {
  * and you need to show different information for each value a user selects.
  */
 function TabSelector(props) {
-  const { tabs } = props;
+  const { tabs, styles } = props;
+  const { rootStyles, buttonStyles, selectedStyles } = styles;
   const [tabSelected, setTabSelected] = useState(0);
 
   const onTabClicked = (event, tab, index) => {
@@ -38,14 +39,15 @@ function TabSelector(props) {
   };
 
   const getButtonStyles = (index) => {
+    const styles = { ...buttonStylesDefault, ...buttonStyles };
     if (index === tabSelected) {
-      return { ...buttonStyles, ...selectedStyles }
+      return { ...styles, ...selectedStylesDefault, ...selectedStyles }
     }
-    return buttonStyles
+    return styles;
   }
 
   return (
-    <div style={rootStyles}>
+    <div style={{ ...rootStylesDefault, ...rootStyles } }>
       <ul>
       {
         tabs.map((tab, index) => {
@@ -66,7 +68,8 @@ TabSelector.propTypes = {
   tabs: PropTypes.arrayOf(PropTypes.exact({
     title: PropTypes.string,
     onClick: PropTypes.func
-  }))
+  })),
+  styles: PropTypes.object
 }
 
 export default TabSelector;
