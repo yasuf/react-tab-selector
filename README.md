@@ -21,13 +21,16 @@ const MyComponent = () => {
     <TabSelector
       tabs={[
         {
-          title: 'All'
+          title: 'All',
+          onClick: () => alert('Clicked All')
         },
         {
-          title: 'Gaming'
+          title: 'Gaming',
+          onClick: () => alert('Clicked Gaming')
         },
         {
-          title: 'Photography'
+          title: 'Photography',
+          onClick: () => alert('Clicked Photography')
         }
       ]}
     />
