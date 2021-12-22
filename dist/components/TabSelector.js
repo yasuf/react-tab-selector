@@ -55,8 +55,8 @@ function TabSelector(props) {
   const [tabSelected, setTabSelected] = (0, _react.useState)(0);
 
   const onTabClicked = (event, tab, index) => {
+    setTabSelected(index);
     tab.onClick(event);
-    setTabSelected(tab, index);
   };
 
   const getButtonStyles = index => {

@@ -33,8 +33,8 @@ function TabSelector(props) {
   const [tabSelected, setTabSelected] = useState(0);
 
   const onTabClicked = (event, tab, index) => {
+    setTabSelected(index);
     tab.onClick(event);
-    setTabSelected(tab, index);
   };
 
   const getButtonStyles = (index) => {
