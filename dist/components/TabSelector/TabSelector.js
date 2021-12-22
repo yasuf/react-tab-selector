@@ -9,6 +9,10 @@ require("core-js/modules/web.dom-collections.iterator.js");
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -39,6 +43,10 @@ const selectedStyles = {
   "backgroundColor": "black",
   "color": "white"
 };
+/**
+ * React Tab Selector component. Useful when you want to have a category selector
+ * and you need to show different information for each value a user selects.
+ */
 
 function TabSelector(props) {
   const {
@@ -46,8 +54,9 @@ function TabSelector(props) {
   } = props;
   const [tabSelected, setTabSelected] = (0, _react.useState)(0);
 
-  const onTabClicked = tab => {
-    setTabSelected(tab);
+  const onTabClicked = (event, tab, index) => {
+    tab.onClick(event);
+    setTabSelected(tab, index);
   };
 
   const getButtonStyles = index => {
@@ -62,7 +71,7 @@ function TabSelector(props) {
     style: rootStyles
   }, /*#__PURE__*/_react.default.createElement("ul", null, tabs.map((tab, index) => {
     return /*#__PURE__*/_react.default.createElement("button", {
-      onClick: () => onTabClicked(index),
+      onClick: event => onTabClicked(event, tab, index),
       style: getButtonStyles(index)
     }, /*#__PURE__*/_react.default.createElement("li", {
       className: "tab"
@@ -70,5 +79,12 @@ function TabSelector(props) {
   })));
 }
 
+TabSelector.propTypes = {
+  /** Tabs to render as categories */
+  tabs: _propTypes.default.arrayOf(_propTypes.default.exact({
+    title: _propTypes.default.string,
+    onClick: _propTypes.default.func
+  }))
+};
 var _default = TabSelector;
 exports.default = _default;
