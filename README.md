@@ -1,5 +1,5 @@
 # React Tab Selector
-## Getting started
+### Getting started
 
 1. Inside your project, run `npm install --save react-tab-selector`.
 
